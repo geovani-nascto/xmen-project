@@ -2,4 +2,128 @@
 
 *{
     font-family: 'Oxanium', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body{
+    background-color: #000;
+    color: #fff;
+}
+
+body::before{
+    content: "";
+    background-image: url(../img/bg-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+.character-selection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    min-height: calc(100vh - 152px);
+}
+
+.character-selection .characters-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.character-selection .characters{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 585px;
+    gap: 25px;
+}
+
+.character-selection .characters .title{
+    font-size: 20px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #47f4ff;
+    width: 100%;
+    text-align: center;
+}
+
+.characters-list .character img{
+    width: 100%;
+    height: 100%;
+}
+
+.characters-list .character.selected{
+    box-shadow: 0px 0px 24px 5px #0271f0;
+}
+
+.character-selected{
+    text-align: center;
+    max-height: 530px;
+}
+
+.character-selected .big-character{
+    width: 430px;
+    height: 430px;
+}
+
+.character-selected .character-name{
+    border-bottom: 2px solid #47f4ff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.character-selected .character-description{
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 20px;
+    text-align: center;
+    width: 420px;
+}
+
+@media (max-width: 1120px){
+    .header .logo{
+        max-width: 190px;
+    }
+    .character-selection{
+        flex-direction: column-reverse;
+        max-width: 430px;
+        margin: 0 auto;
+    }
+    .character-selection .characters{
+        margin-top: 37px;
+    }
+    .character-selection .characters .title{
+        font-size: 15px;
+    }
+    .character-selection .characters-list{
+        gap: 9px;
+    }
+    .character-selection .character img{
+        width: 80px;
+    }
+    .character-selected .big-character{
+        width: 350px;
+        height: 350px;
+    }
+    .character-selected .character-description{
+        width: 80%;
+        font-size: 16px;
+        margin: 20px auto;
+    }
 }
