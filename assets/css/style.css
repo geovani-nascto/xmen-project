@@ -63,6 +63,10 @@ body::before{
     text-align: center;
 }
 
+.characters-list .character{
+    border-bottom: 4px solid #47f4ff;
+}
+
 .characters-list .character img{
     width: 100%;
     height: 100%;

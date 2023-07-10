@@ -7,24 +7,41 @@ characters.forEach((character) => {
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        const characterSelected = document.querySelector('.selected');
-        characterSelected.classList.remove('selected');
+        removeCharacterSelection();
 
         character.classList.add('selected');
 
         // Pega o elemento do personagem grande para adicionar infos nele
-        const bigCharacter = document.querySelector('.big-character');
-        // Altera a imagem do personagem grande
-        const idCharacter = character.attributes.id.value;
-
-        bigCharacter.src = `./assets/img/card-${idCharacter}.png`;
+        changeImageOfSelectedCharacter(character);
 
         // Altera o nome do personagem grande
-        const characterName = document.getElementById('character-name');
-        characterName.innerText = character.getAttribute('data-name');
+        changeNameOfSelectedCharacter(character);
 
         //Altera a descrição do personagem grande
-        const characterDescription = document.getElementById('character-description');
-        characterDescription.innerText = character.getAttribute('data-description');
+        changeDescriptionCharacter(character);
     })
 })
+
+function changeDescriptionCharacter(character) {
+    const characterDescription = document.getElementById('character-description');
+    characterDescription.innerText = character.getAttribute('data-description');
+}
+
+function changeNameOfSelectedCharacter(character) {
+    const characterName = document.getElementById('character-name');
+    characterName.innerText = character.getAttribute('data-name');
+}
+
+function changeImageOfSelectedCharacter(character) {
+    const bigCharacter = document.querySelector('.big-character');
+
+    // Altera a imagem do personagem grande
+    const idCharacter = character.attributes.id.value;
+
+    bigCharacter.src = `./assets/img/card-${idCharacter}.png`;
+}
+
+function removeCharacterSelection() {
+    const characterSelected = document.querySelector('.selected');
+    characterSelected.classList.remove('selected');
+}
